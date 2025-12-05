@@ -1,0 +1,314 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: none;
+}
+
+.container-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e8dcd8;
+  margin-top: auto;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.mobile-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 758px;
+  width: 100%;
+  max-width: 28rem;
+  min-width: 360px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  position: relative;
+  border-radius: 1rem 1rem 1rem 1rem;
+  margin: 0 1rem !important;
+}
+
+.fundo {
+  background: linear-gradient(
+    135deg,
+    #f7f3e8 0%,
+    #d6aba6 45%,
+    #d6aba6 55%,
+    #f7f3e8 100%
+  );
+  padding-bottom: 1rem;
+  border-radius: 1rem 1rem 0.2rem 0.2rem;
+  box-shadow: 0 25px 50px -12px rgba(129, 128, 128, 0.25);
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  h1 {
+    font-size: 2rem;
+    font-family: "Playfair Display", serif;
+    font-weight: 800;
+    font-style: italic;
+  }
+  p {
+    font-size: 1rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+}
+.profile-image {
+  width: 8rem; /* w-32 (128px) */
+  height: 8rem; /* h-32 (128px) */
+  border-radius: 2rem; /* rounded-[2rem] */
+  object-fit: cover; /* object-cover */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  border: 4px solid #fff; /* border-4 border-white */
+  position: relative; /* relative */
+  margin-bottom: 1rem;
+}
+
+.carousel-container {
+  width: 100%;
+  height: 100px;
+  margin-top: 1rem;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10% 90%,
+    transparent
+  );
+
+  .carousel {
+    width: 100%;
+    display: flex;
+    position: relative;
+
+    .item {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      left: 100%;
+      animation: autoRun 4s linear infinite;
+      animation-delay: var(--delay);
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+}
+
+.carousel-container.reverse .item {
+  animation: reverseRun 4s linear infinite;
+  animation-delay: var(--delay);
+}
+
+.carousel-container:hover .item {
+  animation-play-state: paused;
+  filter: grayscale(1);
+}
+
+.carousel-container .item:hover {
+  filter: grayscale(0);
+}
+
+@keyframes autoRun {
+  from {
+    left: 100%;
+  }
+  to {
+    left: -100px;
+  }
+}
+
+@keyframes reverseRun {
+  from {
+    left: -100px;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+.action-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* position: absolute;
+  bottom: 1rem; */
+  width: 100%;
+}
+
+.hr {
+  margin: 1rem;
+  width: 90%;
+}
+
+/* From Uiverse.io by MuhammadHasann */
+button {
+  position: relative;
+  padding: 12px 35px;
+  background: #fec195;
+  font-size: 17px;
+  font-weight: 500;
+  color: #181818;
+  border: 3px solid #fec195;
+  border-radius: 8px;
+  box-shadow: 0 0 0 #fec1958c;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.star-1 {
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+}
+
+.star-2 {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-3 {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-4 {
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-5 {
+  position: absolute;
+  top: 25%;
+  left: 45%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01);
+}
+
+.star-6 {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 0 #fffdef);
+  z-index: -5;
+  transition: all 0.8s ease;
+}
+
+button:hover {
+  background: transparent;
+  color: #fec195;
+  box-shadow: 0 0 25px #fec1958c;
+}
+
+button:hover .star-1 {
+  position: absolute;
+  top: -80%;
+  left: -30%;
+  width: 25px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-2 {
+  position: absolute;
+  top: -25%;
+  left: 10%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-3 {
+  position: absolute;
+  top: 55%;
+  left: 25%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-4 {
+  position: absolute;
+  top: 30%;
+  left: 80%;
+  width: 8px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-5 {
+  position: absolute;
+  top: 25%;
+  left: 115%;
+  width: 15px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+button:hover .star-6 {
+  position: absolute;
+  top: 5%;
+  left: 60%;
+  width: 5px;
+  height: auto;
+  filter: drop-shadow(0 0 10px #fffdef);
+  z-index: 2;
+}
+
+.fil0 {
+  fill: #fffdef;
+}
